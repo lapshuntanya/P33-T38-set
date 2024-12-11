@@ -70,7 +70,9 @@ public:
 		if (root == nullptr)
 			cout << "Дерево контейнерів порожнє!" << endl;
 		else {
-			
+			showSubTree(root->left);
+			cout << root->info << " ";
+			showSubTree(root->right);
 		}
 	}
 
