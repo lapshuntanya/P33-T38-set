@@ -33,14 +33,20 @@ public:
 		else {//Якщо в дереві є вузли
 			//Пошук місця для вставки
 			Node<U>* p = root;
+			Node<U>* pPrev = root;
 			while (p != nullptr) {
+				pPrev = p;
 				if (value < p->info)
 					p = p->left;
 				else
 					p = p->right;
 			}
-
-
+			
+			//Прив'язка нового вузла до знайденного місця
+			if (value < pPrev->info)
+				pPrev->left = el;
+			else
+				pPrev->right = el;
 		}
 	}
 
